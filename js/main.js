@@ -1,16 +1,28 @@
 import '../scss/styles.scss'
 
-document.getElementById('menuToggle').addEventListener('click', function () {
-    document.getElementById('mobileMenu').classList.toggle('open');
+var menuToggleButton = document.getElementById('menuToggle');
+var menuCloseButton = document.getElementById('menuClose');
+
+menuToggleButton.addEventListener('click', function () {
+    menuToggleButton.classList.remove('show')
+    menuCloseButton.classList.add('show')
+    document.getElementById('mobileMenu').classList.add('open');
 });
 
-document.getElementById('menuClose').addEventListener('click', function () {
+menuCloseButton.addEventListener('click', function () {
+    menuCloseButton.classList.remove('show')
+    menuToggleButton.classList.add('show')
     document.getElementById('mobileMenu').classList.remove('open');
 });
 
 document.querySelectorAll('.menu__item[data-toggle]').forEach(item => {
     item.addEventListener('click', function () {
         const dropdownId = this.getAttribute('data-toggle');
+        let dropdownsMenu = document.querySelector('.menu__dropdowns');
+        dropdownsMenu.style.height = 'fit-content'
+        if (dropdownId == 'blog') {
+            dropdownsMenu.style.height = 0
+        }
         document.querySelectorAll('.menu__dropdown').forEach(dropdown => {
             dropdown.classList.remove('active');
         });
