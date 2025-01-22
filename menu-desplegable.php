@@ -4,6 +4,19 @@ Plugin Name: Menú Desplegable Responsive
 Description: Prueba de menú desplegable responsive.
 Version: 1.0
 */
+function register_custom_block() {
+    wp_register_script(
+        'custom-block',
+        plugins_url( 'block.js', __FILE__ ),
+        array( 'wp-blocks', 'wp-element', 'wp-block-editor' ),
+        true
+    );
+
+    register_block_type('custom/menu', array(
+        'editor_script' => 'custom-block',
+    ));
+}
+add_action('init', 'register_custom_block');
 
 function show_custom_menu() {
     wp_enqueue_script('menu-desplegable-bundle-js', plugins_url('dist/bundle.js', __FILE__), array(), null, true);
