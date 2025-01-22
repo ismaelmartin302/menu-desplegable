@@ -31,7 +31,7 @@ function show_custom_menu() {
                 <li class="menu__item" data-toggle="ks-talent">KS Talent</li>
                 <li class="menu__item" data-toggle="blog">Blog</li>
             </ul>
-            <button class="menu__toggle" id="menuToggle">
+            <button class="menu__toggle show" id="menuToggle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                 </svg>
@@ -44,33 +44,27 @@ function show_custom_menu() {
         </div>
         
         <ul class="menu__list menu__mobile" id="mobileMenu">
-            <li class="menu__item">
-                Formación
-                <ul class="submenu">
-                    <li>Digital Marketing School</li>
-                    <li>Tech School</li>
-                    <li>Business School</li>
-                    <li>Sports School</li>
-                    <li>Education School</li>
-                </ul>
-            </li>
-            <li class="menu__item">
-                Somos KS
-                <ul class="submenu">
-                    <li>Conócenos</li>
-                    <li>Nuestros profesores</li>
-                </ul>
-            </li>
-            <li class="menu__item">
-                KS Talent
-                <ul class="submenu">
-                    <li>Network</li>
-                    <li>Eventos</li>
-                    <li>Empleo</li>
-                </ul>
-            </li>
+            <details class="menu__submenu">
+                <summary >Formación</summary>
+                <li>Digital Marketing School</li>
+                <li>Tech School</li>
+                <li>Business School</li>
+                <li>Sports School</li>
+                <li>Education School</li>
+            </details>
+            <details class="menu__submenu">
+                <summary>Somos KS</summary>
+                <li>Conócenos</li>
+                <li>Nuestros profesores</li>
+            </details>
+            <details class="menu__submenu">
+                <summary>KS Talent</summary>
+                <li>Network</li>
+                <li>Eventos</li>
+                <li>Empleo</li>
+            </details>
             <li class="menu__item">Blog</li>
-            <img class="menu__image" src="../images/logo_Unir.svg" alt="Logo UNIR">
+            <img class="menu__image" src="' . plugins_url('images/logo_Unir.svg', __FILE__) . '" alt="Logo"></li>
         </ul>
         <ul class="menu__list">
             <li class="menu__item">
