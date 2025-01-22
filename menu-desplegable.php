@@ -13,23 +13,52 @@ function show_custom_menu() {
         <div class="menu__group">
             <img class="menu__logo" src="' . plugins_url('images/logo.png', __FILE__) . '" alt="Logo"></li>
             <ul class="menu__list">
-                <li class="menu__item">Formación</li>
-                <li class="menu__item">Somos KS</li>
-                <li class="menu__item">KS Talent</li>
-                <li class="menu__item">Blog</li>
-
+                <li class="menu__item" data-toggle="formacion">Formación</li>
+                <li class="menu__item" data-toggle="somos-ks">Somos KS</li>
+                <li class="menu__item" data-toggle="ks-talent">KS Talent</li>
+                <li class="menu__item" data-toggle="blog">Blog</li>
             </ul>
             <button class="menu__toggle" id="menuToggle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                    </svg>
+                </svg>
             </button>
             <button class="menu__close" id="menuClose">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-                    </svg>
+                </svg>
             </button>
         </div>
+        
+        <ul class="menu__list menu__mobile" id="mobileMenu">
+            <li class="menu__item">
+                Formación
+                <ul class="submenu">
+                    <li>Digital Marketing School</li>
+                    <li>Tech School</li>
+                    <li>Business School</li>
+                    <li>Sports School</li>
+                    <li>Education School</li>
+                </ul>
+            </li>
+            <li class="menu__item">
+                Somos KS
+                <ul class="submenu">
+                    <li>Conócenos</li>
+                    <li>Nuestros profesores</li>
+                </ul>
+            </li>
+            <li class="menu__item">
+                KS Talent
+                <ul class="submenu">
+                    <li>Network</li>
+                    <li>Eventos</li>
+                    <li>Empleo</li>
+                </ul>
+            </li>
+            <li class="menu__item">Blog</li>
+            <img class="menu__image" src="../images/logo_Unir.svg" alt="Logo UNIR">
+        </ul>
         <ul class="menu__list">
             <li class="menu__item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
@@ -40,11 +69,31 @@ function show_custom_menu() {
             <li class="menu__item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                    </svg>
-                    <p>Campus</p>
+                  </svg>
+                  <p>Campus</p>
             </li>
             <img class="menu__image" src="' . plugins_url('images/logo_Unir.svg', __FILE__) . '" alt="Logo"></li>
         </ul>
+
+        <!-- Submenús en pantallas grandes -->
+        <div class="menu__dropdowns">
+            <div class="menu__dropdown" id="formacion">
+                <button>Digital Marketing School</button>
+                <button>Tech School</button>
+                <button>Business School</button>
+                <button>Sports School</button>
+                <button>Education School</button>
+            </div>
+            <div class="menu__dropdown" id="somos-ks">
+                <button>Conócenos</button>
+                <button>Nuestros profesores</button>
+            </div>
+            <div class="menu__dropdown" id="ks-talent">
+                <button>Network</button>
+                <button>Eventos</button>
+                <button>Empleo</button>
+            </div>
+        </div>
     </nav>
     ';
 }

@@ -1,10 +1,19 @@
 import '../scss/styles.scss'
 
-document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.querySelector('.menu__button');
-    const menuList = document.querySelector('.menu__list');
+document.getElementById('menuToggle').addEventListener('click', function () {
+    document.getElementById('mobileMenu').classList.toggle('open');
+});
 
-    menuButton.addEventListener('click', function () {
-        menuList.classList.toggle('menu--mobile');
+document.getElementById('menuClose').addEventListener('click', function () {
+    document.getElementById('mobileMenu').classList.remove('open');
+});
+
+document.querySelectorAll('.menu__item[data-toggle]').forEach(item => {
+    item.addEventListener('click', function () {
+        const dropdownId = this.getAttribute('data-toggle');
+        document.querySelectorAll('.menu__dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+        document.getElementById(dropdownId).classList.add('active');
     });
 });
