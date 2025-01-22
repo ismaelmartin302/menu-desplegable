@@ -6,7 +6,7 @@ Version: 1.0
 */
 
 function show_custom_menu() {
-    wp_enqueue_script('menu-desplegable-js', plugins_url('js/main.js', __FILE__), array('jquery'), null, true);
+    wp_enqueue_script('menu-desplegable-bundle-js', plugins_url('dist/bundle.js', __FILE__), array(), null, true);
 
     return '
     <nav class="menu">
