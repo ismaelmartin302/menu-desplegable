@@ -7,7 +7,6 @@ $color-dark-background: #303030;
 $color-highlight: #ffc72c;
 $color-white: white;
 
-/* Resto del código */
 .menu {
     display: flex;
     flex-wrap: wrap;
@@ -83,6 +82,9 @@ $color-white: white;
 
     &__toggle, &__close {
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: transparent;
         color: $color-white;
         border: 0;
@@ -109,13 +111,18 @@ $color-white: white;
     .menu {
         height: 4em;
         border-bottom: 2px solid $color-yellow;
-    
+
         &__group {
             align-items: center;
             width: 100%;
             padding: 0em 1em;
             justify-content: space-between;
             border-bottom: 2px solid $color-yellow;
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
         .menu__mobile {
@@ -127,6 +134,7 @@ $color-white: white;
 
             .menu__item {
                 height: fit-content;
+                margin-bottom: auto;
             }
 
             &.open {
