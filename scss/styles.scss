@@ -70,7 +70,7 @@ $color-white: white;
         font-size: 100%;
         border-bottom: 4px solid transparent;
   
-        &:hover, &--active {
+        &:hover, &.--active {
             border-bottom: 4px solid $color-yellow;
             color: $color-yellow;
         }

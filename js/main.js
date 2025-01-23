@@ -17,6 +17,10 @@ menuCloseButton.addEventListener('click', function () {
 
 document.querySelectorAll('.menu__item[data-toggle]').forEach(item => {
     item.addEventListener('click', function () {
+        document.querySelectorAll('.menu__item').forEach(menuItem => {
+            menuItem.classList.remove('--active');
+        });
+        item.classList.add('--active')
         const dropdownId = this.getAttribute('data-toggle');
         let dropdownsMenu = document.querySelector('.menu__dropdowns');
         dropdownsMenu.style.height = 'fit-content'
